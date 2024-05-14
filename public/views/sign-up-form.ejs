@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <h1>Sign Up</h1>
+  <div>
+    <% if (error) {%>
+        <h1>Error: <%= error %></h1>
+        <h3>Try again</h3>
+      <% }%>
+  </div>
+  <form action="" method="POST">
+    <label for="fname">First name</label>
+    <input id = "fname" name="fname" placeholder="first name" type="text" />
+    <label for="lname">Last name</label>
+    <input id = "lname" name="lname" placeholder="last name" type="text" />
+    <label for="email">Email</label>
+    <input id = "email" name="email" placeholder="email" type="text" />
+    <label for="password">Password</label>
+    <input id = "password" name="password" type="password" />
+    <button id="submitBtn">Sign Up</button>
+  </form>
+  <script src="/sign-up.js"></script>
+</body>
+</html>

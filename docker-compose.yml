@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: login
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      TZ: Europe/Berlin
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata2:/var/lib/mysql
+      - ./mysql/DatabaseDump1.sql:/docker-entrypoint-initdb.d/DatabaseDump.sql
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: mysqldb
+    restart: always
+    ports:
+      - "8081:80"
+
+
+volumes:
+  dbdata2:
+
+
